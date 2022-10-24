@@ -1,6 +1,35 @@
-{% block content %}
-<h1>Register</h1>
-<h4>Enter Student Information below</h4>
-<!--Form to request user's name-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles.css') }}"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <h1>Register</h1>
+    <h4>Enter Student Information below</h4>
+    <!--Form to request user's name-->
+    <h3>Enter an Integer Value:</h3>
+    <form action="/addStudentOrganisation" method="POST">
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" />
+      <select name="studentOrganisation" id="studentOrganisation">
+        <option value="Charlotte Hack">Charlotte Hack</option>
+        <option value="Code 9">Code 9</option>
+        <option value="Women Who Code">Women Who Code</option>
+        <option value="Runtime Error">Runtime Error</option>
+        <option value="Frontpage Freebirds">Frontpage Freebirds</option>
+      </select>
+      <button type="submit" value="submit">Register</button>
+    </form>
 
-{% endblock %}
+    {% endblock %}
+  </body>
+</html>

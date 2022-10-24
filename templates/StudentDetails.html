@@ -1,9 +1,28 @@
-{% block content %}
-<h1>Student Details</h1>
-<table>
-    {%for key,value in studentOrganisationDetails.items()%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles.css') }}"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <h1>Student Details</h1>
+    <table>
+      {%for key,value in studentOrganisationDetails.items()%}
+      <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+      </tr>
+      {%endfor%}
+    </table>
 
-    {%endfor%}
-</table>
-
-{% endblock %}
+    {% endblock %}
+  </body>
+</html>
